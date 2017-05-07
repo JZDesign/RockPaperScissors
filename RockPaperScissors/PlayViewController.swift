@@ -22,13 +22,14 @@ class PlayViewController: UIViewController {
     // MARK: Actions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Play"{
+            // set the controller destination to the results view with attached player selections
             let controller = segue.destination as! ResultViewController
             controller.firstValue = buttonTag
             controller.secondValue = randomOpponentValue()
         }
     }
 
-    
+    // player selected a button, perform segue with player choice attached.
     @IBAction func doSegue(_ sender: UIButton) {
         buttonTag = sender.tag
         performSegue(withIdentifier: "Play", sender: self)

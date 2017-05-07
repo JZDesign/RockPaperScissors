@@ -12,35 +12,40 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultImage: UIImageView!
 
+    // player choices represented as integers
     var firstValue: Int?
     var secondValue: Int?
     
     override func viewWillAppear(_ animated: Bool) {
-        calculateResult(a: firstValue!, b: secondValue!)
+        calculateResult()
     }
 
-    func calculateResult(a: Int, b: Int) {
-        if a == b {
+    // compare player choices and assign appropriate responses
+    // 1 = rock 
+    // 2 = paper
+    // 3 = scissors
+    func calculateResult() {
+        if firstValue == secondValue {
             resultLabel.text = "IT'S A TIE!"
             resultImage.image = UIImage(named: "itsATie")
-        } else if a == 1 {
-            if b == 2 {
+        } else if firstValue == 1 {
+            if secondValue == 2 {
                 resultLabel.text = "YOU LOSE! Paper Covers Rock!"
                 resultImage.image = UIImage(named: "PaperCoversRock")
             } else {
                 resultLabel.text = "YOU WIN! Rock Crushes Scissors!"
                 resultImage.image = UIImage(named: "RockCrushesScissors")
             }
-        } else if a == 2 {
-            if b == 1 {
+        } else if firstValue == 2 {
+            if secondValue == 1 {
                 resultLabel.text = "YOU WIN! Paper Covers Rock"
                 resultImage.image = UIImage(named: "PaperCoversRock")
             } else {
                 resultLabel.text = "YOU LOSE! Scissors Cut Paper!"
                 resultImage.image = UIImage(named: "ScissorsCutPaper")
             }
-        } else if a == 3 {
-            if b == 1 {
+        } else if firstValue == 3 {
+            if secondValue == 1 {
                 resultLabel.text = "YOU LOSE! Rock Crushes Scissors"
                 resultImage.image = UIImage(named: "RockCrushesScissors")
             } else {
@@ -50,6 +55,7 @@ class ResultViewController: UIViewController {
         }
     }
     
+    // return to PlayViewController
     @IBAction func doPlayAgainButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
