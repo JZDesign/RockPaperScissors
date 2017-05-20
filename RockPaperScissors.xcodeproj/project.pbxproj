@@ -13,6 +13,8 @@
 		425D75051EBF7A0000A4918D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425D75041EBF7A0000A4918D /* Assets.xcassets */; };
 		425D75081EBF7A0000A4918D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425D75061EBF7A0000A4918D /* LaunchScreen.storyboard */; };
 		425D75101EBF7F3B00A4918D /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425D750F1EBF7F3B00A4918D /* ResultViewController.swift */; };
+		426496B71ECF22E8005BA0AC /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496B61ECF22E8005BA0AC /* HistoryViewController.swift */; };
+		426496B91ECF23F4005BA0AC /* MatchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496B81ECF23F4005BA0AC /* MatchResults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		425D75071EBF7A0000A4918D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		425D75091EBF7A0000A4918D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		425D750F1EBF7F3B00A4918D /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		426496B61ECF22E8005BA0AC /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		426496B81ECF23F4005BA0AC /* MatchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				425D74FD1EBF79FF00A4918D /* AppDelegate.swift */,
 				425D74FF1EBF79FF00A4918D /* PlayViewController.swift */,
 				425D750F1EBF7F3B00A4918D /* ResultViewController.swift */,
+				426496B61ECF22E8005BA0AC /* HistoryViewController.swift */,
+				426496B81ECF23F4005BA0AC /* MatchResults.swift */,
 				425D75011EBF79FF00A4918D /* Main.storyboard */,
 				425D75041EBF7A0000A4918D /* Assets.xcassets */,
 				425D75061EBF7A0000A4918D /* LaunchScreen.storyboard */,
@@ -143,6 +149,8 @@
 				425D75001EBF79FF00A4918D /* PlayViewController.swift in Sources */,
 				425D74FE1EBF79FF00A4918D /* AppDelegate.swift in Sources */,
 				425D75101EBF7F3B00A4918D /* ResultViewController.swift in Sources */,
+				426496B91ECF23F4005BA0AC /* MatchResults.swift in Sources */,
+				426496B71ECF22E8005BA0AC /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +318,7 @@
 				425D750E1EBF7A0000A4918D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

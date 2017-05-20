@@ -8,6 +8,12 @@
 
 import UIKit
 
+// protocol delegate to pass data backward
+protocol ResultViewControllerDelegate {
+    func readData(gameHistory: MatchResults)
+}
+
+
 class ResultViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultImage: UIImageView!
@@ -15,6 +21,12 @@ class ResultViewController: UIViewController {
     // player choices represented as integers
     var firstValue: Int?
     var secondValue: Int?
+    // set delegate for pass back to PlayViewController with instance of MatchResults
+    var delegate : ResultViewControllerDelegate?
+    var match : MatchResults!
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         calculateResult()
@@ -53,10 +65,23 @@ class ResultViewController: UIViewController {
                 resultImage.image = UIImage(named: "ScissorsCutPaper")
             }
         }
+        //set instance of MatchResults Struct for passthrough to PlayViewController
+        match = setMatch(text: resultLabel.text!, image: resultImage.image!)
     }
     
-    // return to PlayViewController
+    
+    
+    // save match for history
+    func setMatch(text: String, image: UIImage) -> MatchResults {
+        return MatchResults(winLose: text, image: image)
+    }
+    
+    
+   
+    
+    // return to PlayViewController with instance of match
     @IBAction func doPlayAgainButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.delegate?.readData(gameHistory: match)
+        self.dismiss(animated: true)
     }
 }

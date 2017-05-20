@@ -63,14 +63,25 @@
                                     <action selector="doSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s4O-ER-dE6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6os-a1-ZAD">
+                                <rect key="frame" x="16" y="629" width="343" height="30"/>
+                                <state key="normal" title="See History"/>
+                                <connections>
+                                    <action selector="doHistorySegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="95b-vm-enD"/>
+                                    <segue destination="7CQ-L9-THX" kind="presentation" identifier="History" id="gUH-IE-SUl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6os-a1-ZAD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6IS-JH-1qM"/>
                             <constraint firstItem="Y3p-bE-TFj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6u2-pG-wPi"/>
                             <constraint firstItem="BGP-RV-XFI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7vY-up-lmC"/>
                             <constraint firstItem="BGP-RV-XFI" firstAttribute="top" secondItem="QJ5-So-Kd9" secondAttribute="bottom" constant="25" id="8gV-yo-aiX"/>
+                            <constraint firstItem="6os-a1-ZAD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DJN-vN-ouI"/>
                             <constraint firstItem="QJ5-So-Kd9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="H4q-l3-ZxJ"/>
                             <constraint firstItem="Y3p-bE-TFj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JDG-Kz-fZK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6os-a1-ZAD" secondAttribute="bottom" constant="8" id="N9e-R4-etb"/>
                             <constraint firstItem="xLW-PW-GBd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QQM-mw-bBs"/>
                             <constraint firstItem="Y3p-bE-TFj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="UAJ-FA-PKs"/>
                             <constraint firstItem="QJ5-So-Kd9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ewm-Ab-Ops"/>
@@ -84,6 +95,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="1PO-Ua-zLS">
+            <objects>
+                <viewController id="7CQ-L9-THX" customClass="HistoryViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n4u-J0-Y6C"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yd9-6O-GBN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QMj-16-lmn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K1s-GC-M2b">
+                                <rect key="frame" x="0.0" y="78" width="375" height="589"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryCell" id="Ist-S9-WaT">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ist-S9-WaT" id="TXB-Ok-eFM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7CQ-L9-THX" id="2cu-tj-Tqz"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTx-Za-lnE">
+                                <rect key="frame" x="16" y="20" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CUT-mh-MWp"/>
+                                </constraints>
+                                <state key="normal" title="Go Back"/>
+                                <connections>
+                                    <action selector="doGoBackButton:" destination="7CQ-L9-THX" eventType="touchUpInside" id="klw-h7-Jon"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yd9-6O-GBN" firstAttribute="top" secondItem="K1s-GC-M2b" secondAttribute="bottom" id="8dX-yF-f0a"/>
+                            <constraint firstAttribute="trailing" secondItem="K1s-GC-M2b" secondAttribute="trailing" id="BsZ-xv-Hcq"/>
+                            <constraint firstItem="GTx-Za-lnE" firstAttribute="top" secondItem="n4u-J0-Y6C" secondAttribute="bottom" id="FU1-DF-46n"/>
+                            <constraint firstItem="K1s-GC-M2b" firstAttribute="leading" secondItem="QMj-16-lmn" secondAttribute="leading" id="NX6-uj-vwl"/>
+                            <constraint firstItem="K1s-GC-M2b" firstAttribute="top" secondItem="GTx-Za-lnE" secondAttribute="bottom" constant="8" id="QYq-iB-usd"/>
+                            <constraint firstItem="GTx-Za-lnE" firstAttribute="trailing" secondItem="QMj-16-lmn" secondAttribute="trailingMargin" id="Qna-SP-ksO"/>
+                            <constraint firstItem="GTx-Za-lnE" firstAttribute="leading" secondItem="QMj-16-lmn" secondAttribute="leadingMargin" id="Y9I-dE-fdn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="K1s-GC-M2b" id="urA-FD-zVV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gmz-S1-grr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="838.83058470764627"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="GiD-8g-0dE">
