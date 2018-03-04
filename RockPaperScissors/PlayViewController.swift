@@ -35,7 +35,6 @@ class PlayViewController: UIViewController, ResultViewControllerDelegate {
             // show history 
             let controller = segue.destination as! HistoryViewController
             controller.history = self.history
-
         }
     }
 
@@ -48,15 +47,11 @@ class PlayViewController: UIViewController, ResultViewControllerDelegate {
     @IBAction func doHistorySegue(_ sender: UIButton) {
         performSegue(withIdentifier: "History", sender: self)
     }
-    
-    
-    
+
     // MARK: ResultViewControllerDelegate
     
     func readData(gameHistory: MatchResults) {
         history.append(gameHistory)
     }
- 
-   
-}
+ }
 

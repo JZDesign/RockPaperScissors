@@ -13,7 +13,6 @@ protocol ResultViewControllerDelegate {
     func readData(gameHistory: MatchResults)
 }
 
-
 class ResultViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultImage: UIImageView!
@@ -24,10 +23,7 @@ class ResultViewController: UIViewController {
     // set delegate for pass back to PlayViewController with instance of MatchResults
     var delegate : ResultViewControllerDelegate?
     var match : MatchResults!
-    
-    
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         calculateResult()
     }
@@ -36,7 +32,7 @@ class ResultViewController: UIViewController {
     // 1 = rock 
     // 2 = paper
     // 3 = scissors
-    func calculateResult() {
+    func calculateResult() {        
         if firstValue == secondValue {
             resultLabel.text = "IT'S A TIE!"
             resultImage.image = UIImage(named: "itsATie")
@@ -68,16 +64,11 @@ class ResultViewController: UIViewController {
         //set instance of MatchResults Struct for passthrough to PlayViewController
         match = setMatch(text: resultLabel.text!, image: resultImage.image!)
     }
-    
-    
-    
+ 
     // save match for history
     func setMatch(text: String, image: UIImage) -> MatchResults {
         return MatchResults(winLose: text, image: image)
     }
-    
-    
-   
     
     // return to PlayViewController with instance of match
     @IBAction func doPlayAgainButton(_ sender: Any) {

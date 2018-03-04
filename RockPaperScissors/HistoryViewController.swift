@@ -15,11 +15,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     // array of results
     var history: [MatchResults]!
     
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return history.count
     }
-    
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         // set reuse cell
